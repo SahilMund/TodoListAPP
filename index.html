@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<script
+			src="https://kit.fontawesome.com/7b01985558.js"
+			crossorigin="anonymous"
+		></script>
+    
+		<!-- linking css stylesheet -->
+		<link rel="stylesheet" href="./style.css" />
+
+		<title>TODO LIST</title>
+	</head>
+	<body>
+   
+		<div class="card">
+			<!-- App Title -->
+			<h2 class = "card-title"> <i class="fa-solid fa-list"></i> &nbsp; TODO List</h2>
+
+			<!-- show the count in the below h3 tag -->
+			<h3 class="todo-count-text"> Count : <strong id="todo-count"> 0 Task</strong></h3>
+
+
+			<div class="header">
+			<div class="header-icons">
+					
+				<!-- remove all the checked items, when the below icon is clicked -->
+				<i class="fa-sharp fa-solid fa-eraser"  onclick="removecheckedItems()" title="remove checked items"></i>
+
+				<!-- clear/delete all todos from both local storage and DOM element , when the below icon is clicked -->
+			<i
+				class="fa-solid fa-trash-can"
+				onclick="clearAll()"
+				title="Clear All"
+			></i>
+			
+			<!-- compelete/uncomplete the todos, when the below icon is clicked -->
+			<i class="fa-regular fa-square" title="Select All" onclick="completeAllTask(event)"></i>
+
+			</div>
+
+			<!-- drop down to implement filter functionality -->
+			<div class="header-dropdwon">
+				<select name="filter" class="search_categories">
+					<option value="all">All</option>
+					<option value="completed">completed</option>
+					<option value="pending">Pending</option>
+				</select>
+			</div>
+
+			</div>
+			
+
+
+			<!-- container will contain text area and the todo items -->
+			<div class="container">
+		
+				<div class="container-top">
+
+					<textarea
+					type="text"
+					id="todo-input"
+					placeholder="Enter your TODO"
+					autocomplete="off"
+				></textarea>
+
+				<!--  To Add Todos  -->
+				<i class="fa-solid fa-circle-plus add-button"></i>
+	
+				<!-- To edit Todos -->
+				<i class="fa-sharp fa-solid fa-pen-to-square edit-button" style="display: none"></i>
+			
+				</div>
+			
+				<!--  In the below unordered list , we will add new todos  -->
+				<ul id="todo-items"></ul>
+			</div>
+		</div>
+
+		
+
+		<script src="./index.js"></script>
+	</body>
+</html>
